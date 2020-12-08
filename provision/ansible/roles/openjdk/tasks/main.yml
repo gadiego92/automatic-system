@@ -1,0 +1,22 @@
+---
+
+- name: Install OpenJDK
+  dnf:
+    name:
+      - java-{{jdk_version}}-openjdk
+      - java-{{jdk_version}}-openjdk-devel
+    state: latest
+
+- name: Set Java home
+  set_fact:
+    jdk_java_home: /etc/alternatives/java_sdk_{{jdk_version}}
+
+- name: Add JAVA_HOME environment variable
+  lineinfile:
+    path: /etc/profile
+    line: export JAVA_HOME={{jdk_java_home}}
+
+- name: Add JAVA_HOME/bin to the PATH
+  lineinfile:
+    path: /etc/profile
+    line: export PATH=$JAVA_HOME/bin:$PATH
