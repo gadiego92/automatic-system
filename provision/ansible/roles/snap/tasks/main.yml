@@ -1,0 +1,15 @@
+---
+
+- name: Instal Snap
+  dnf:
+    name: snapd
+    state: latest
+
+- name:  Enable the main Snap communication socket
+  command: systemctl enable --now snapd.socket
+
+- name: Symlink to enable classic Snap support
+  file:
+    src: /var/lib/snapd/snap
+    dest: /snap
+    state: link
