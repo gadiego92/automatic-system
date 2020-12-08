@@ -1,0 +1,16 @@
+---
+
+- name: Install Android Studio
+  snap:
+    name: android-studio
+    classic: yes
+
+- name: Add Android tools to the PATH
+  lineinfile:
+    path: /etc/profile
+    line: export PATH=$HOME/Android/Sdk/tools:$PATH
+
+- name: Add Android platform-tools to the PATH
+  lineinfile:
+    path: /etc/profile
+    line: export PATH=$HOME/Android/Sdk/platform-tools:$PATH
