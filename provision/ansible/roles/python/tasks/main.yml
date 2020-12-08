@@ -1,0 +1,4 @@
+---
+
+- name: Set Python 3.x as the default /usr/bin/python
+  command: alternatives --set python /usr/bin/python3
