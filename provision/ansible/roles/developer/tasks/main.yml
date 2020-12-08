@@ -1,0 +1,28 @@
+---
+
+- name: Git rebase by default when pulling
+  command: git config --global pull.rebase true arg1
+  args:
+    chdir: /
+
+- name: Git autostash by default when rebasing
+  command: git config --global rebase.autostash true arg1
+  args:
+    chdir: /
+
+- name: Git autostash by default when rebasing
+  command: git config --global core.autocrlf false arg1
+  args:
+    chdir: /
+
+- name: Set Git username
+  command: git config --global user.name "{{git_username}}" arg1
+  args:
+    chdir: /
+  when: git_username is defined
+
+- name: Set Git user email
+  command: git config --global user.email "{{git_user_email}}" arg1
+  args:
+    chdir: /
+  when: git_user_email is defined
