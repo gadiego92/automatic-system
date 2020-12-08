@@ -1,0 +1,30 @@
+---
+
+- name: Configure Madrid timezone
+  file:
+    src: /usr/share/zoneinfo/Europe/Madrid
+    dest: /etc/localtime
+    state: link
+    force: yes
+
+- name: Configure Spanish keyboard
+  command: localectl set-keymap es
+
+- name: Disable kernel updates (to avoid vbguest problems)
+  ini_file:
+    path: /etc/dnf/dnf.conf
+    section: main
+    option: exclude
+    value: kernel* redhat-release*
+    no_extra_spaces: yes
+
+- name: Enable EPEL repository on CentOS
+  dnf:
+    name: epel-release
+    state: latest
+
+- name: Upgrade all packages
+  dnf:
+    name: '*'
+    state: latest
+    exclude: ansible
