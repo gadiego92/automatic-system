@@ -1,0 +1,14 @@
+---
+
+- name: Install GNOME Desktop
+  dnf:
+    name: "@Workstation"
+    state: latest
+
+- name: Set graphical target as default
+  command: systemctl set-default graphical.target
+
+- name: Start GDM
+  systemd:
+    name: gdm
+    state: started
