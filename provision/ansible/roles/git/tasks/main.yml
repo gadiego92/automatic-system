@@ -1,0 +1,6 @@
+---
+
+- name: Install or update Git
+  dnf:
+    name: git
+    state: latest
