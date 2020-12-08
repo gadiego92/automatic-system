@@ -1,0 +1,17 @@
+---
+
+- name: Install Flutter dependencies
+  dnf:
+    name:
+      - bash
+      - curl
+      - file
+      - mesa-libGLU
+      - unzip
+      - which
+      - zip
+
+- name: Install Flutter
+  snap:
+    name: flutter
+    classic: yes
