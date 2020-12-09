@@ -114,3 +114,31 @@ To install these:
 3. On Flutter SDK path select "Install SDK..." and the path `/home/vagrant/Android/flutter`
 4. Wait while Flutter repository is downloaded.
 5. Click "Restart IDE" when prompted.
+
+## Setting up Visual Studio Code
+
+### Install the Flutter and Dart plugins
+
+1. Start Visual Studio Code.
+
+2. Go to Extensions in the left menu.
+
+3. Type "flutter" in the extensions search field, select Flutter in the list, and click Install. This also installs the required Dart plugin.
+
+### Validate your setup with the Flutter Doctor
+
+1. Invoke View > Command Palette...
+
+2. Type "doctor", and select "Flutter: Run Flutter Doctor".
+
+3. Review the output in the OUTPUT pane for any issues. Make sure to select Flutter from the dropdown in the different Output Options.
+
+### Android licenses
+
+To review licenses and accept them, run the following command:
+
+```
+flutter doctor --android-licenses
+```
+
+The reply "y" (yes) to accept the licenses that have not been accepted.
