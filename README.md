@@ -81,3 +81,36 @@ Finally lets see if your profile data is filled and correct.
 Go to `Settings - Profile` and check the fields `Name` and `Public email`.
 
 Then go to `Settings - Emails` and verify that the `Primary email address` is set and it's correct.
+
+## Setting up Android Studio
+
+Start Android Studio, and go through the ‘Android Studio Setup Wizard’. This installs the latest Android SDK, Android SDK Command-line Tools, and Android SDK Build-Tools, which are required by Flutter when developing for Android.
+
+1. Import Android Studio Setting - Do not import settings.
+2. Data Sharing - Don't send.
+3. Android Studio Setup Wizard
+   - Welcome: Next.
+   - Install Type: Custom
+   - Select default JDK Location: JAVA_HOME: /etc/alternatives/java_sdk_1.8.0
+   - Select UI Theme: Darcula/Light.
+   - SDK Components Setup: Disable Android Virtual Device and Next.
+   - Verify Settings: Next.
+   - Emulator Settings: Finish.
+
+### Install the Flutter and Dart plugins
+
+To install these:
+
+1. Start Android Studio.
+2. Configure > Plugins.
+3. Select the Flutter plugin and click "Install".
+4. Click "Install" when prompted to install the Dart plugin.
+5. Click "Restart IDE" when prompted.
+
+### Install Flutter SDK
+
+1. Start Android Studio.
+2. Create New Flutter Project > Flutter Application.
+3. On Flutter SDK path select "Install SDK..." and the path `/home/vagrant/Android/flutter`
+4. Wait while Flutter repository is downloaded.
+5. Click "Restart IDE" when prompted.
